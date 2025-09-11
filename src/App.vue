@@ -12,5 +12,4 @@ import Footer from './components/Footer.vue'
 </script>
 
 <style scoped>
-/* 组件特定样式可以放在这里，如果需要 */
 </style>
