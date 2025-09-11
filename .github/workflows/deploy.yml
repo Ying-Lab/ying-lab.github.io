@@ -1,0 +1,49 @@
+# .github/workflows/deploy.yml
+
+# 工作流名称
+name: Deploy to GitHub Pages
+
+# 触发条件：在 push 到 main 分支时触发
+on:
+  push:
+    branches:
+      - main
+
+# 任务
+jobs:
+  build-and-deploy:
+    # 新增：为工作流授予写入仓库内容的权限
+    permissions:
+      contents: write
+
+    # 运行环境
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. 设置 Node.js 环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # 3. 安装项目依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 4. 构建项目
+      - name: Build
+        run: npm run build
+
+      # 5. 部署到 gh-pages 分支
+      # 使用了一个流行的第三方 Action 来简化部署
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN 是由 GitHub Actions 自动提供的，无需手动设置
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # build 命令生成的静态文件目录
+          publish_dir: ./dist
