@@ -1,0 +1,28 @@
+{
+  "name": "lab_page_test",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write src/",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "gh-pages": "^6.1.1",
+    "prettier": "3.6.2",
+    "sharp": "^0.34.3",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0"
+  }
+}
