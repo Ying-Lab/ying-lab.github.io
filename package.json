@@ -14,12 +14,12 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
-    "gh-pages": "^6.1.1",
     "prettier": "3.6.2",
     "sharp": "^0.34.3",
     "vite": "^7.0.6",
