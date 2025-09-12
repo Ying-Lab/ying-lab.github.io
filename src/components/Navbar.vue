@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/news" class="nav-links" @click="closeMobileMenu"
-            >Research Direction</router-link
+            >Research Areas</router-link
           >
         </li>
         <li class="nav-item">
@@ -27,7 +27,7 @@
           >
         </li>
         <li class="nav-item">
-          <router-link to="/people" class="nav-links" @click="closeMobileMenu">People</router-link>
+          <router-link to="/people" class="nav-links" @click="closeMobileMenu">Member</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/activities" class="nav-links" @click="closeMobileMenu"
