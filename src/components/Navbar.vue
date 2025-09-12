@@ -27,7 +27,7 @@
           >
         </li>
         <li class="nav-item">
-          <router-link to="/people" class="nav-links" @click="closeMobileMenu">Member</router-link>
+          <router-link to="/people" class="nav-links" @click="closeMobileMenu">Members</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/activities" class="nav-links" @click="closeMobileMenu"
