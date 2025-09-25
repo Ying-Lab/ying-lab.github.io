@@ -13,10 +13,30 @@ import activityImg5_3 from '@/assets/activity/24毕业 3.jpg'
 import activityImg5_4 from '@/assets/activity/24毕业 4.jpg'
 import activityImg6_1 from '@/assets/activity/海门岛团建 1.jpg'
 import activityImg6_2 from '@/assets/activity/海门岛团建 2.jpg'
+import activityImg7_1 from '@/assets/activity/2025迎新博饼1.jpg'
+import activityImg7_2 from '@/assets/activity/2025迎新博饼2.jpg'
+import activityImg7_3 from '@/assets/activity/2025迎新博饼3.jpg'
+import activityImg8_1 from '@/assets/activity/2025获奖1.jpg'
+import activityImg8_2 from '@/assets/activity/2025获奖3.jpg'
 
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
+    {
+      id: 'activity8',
+      date: '2025.9.25',
+      title: '曹澜同学荣获第三届厦门大学科技期刊论文视频摘要大赛二等奖',
+      content: '2025年9月25日，实验室曹澜同学在第三届厦门大学科技期刊论文视频摘要大赛中表现优异，其作品《基于心率变异性非线性动力学算法的不同年龄心脏分析》从20项参赛作品中脱颖而出，荣获二等奖。该研究运用非线性动力学方法分析心率变异性，揭示年轻人心脏活动更“混沌”且适应性更强，为心血管健康监测与早期预警提供了新视角。',
+      images: [activityImg8_1, activityImg8_2],
+    },
+    {
+      id: 'activity7',
+      date: '2025.09.22',
+      title: '2025年迎新与博饼主题团建活动（月满中秋，情聚实验室）',
+      content:
+        '2025年9月22日，正值国庆中秋佳节来临之际，实验室组织了以"月满中秋，情聚实验室"为主题的迎新与博饼团建活动。活动现场，新老成员齐聚一堂，共同参与博饼游戏，体验闽南传统习俗，交流科研心得与生活趣事。实验室为大家准备了精美的礼品，现场氛围温馨欢乐，不仅让新成员感受了实验室的温暖，也增强了团队凝聚力。',
+      images: [activityImg7_2, activityImg7_3, activityImg7_1],
+    },
     {
       id: 'activity1',
       date: '2025.07.14',
@@ -38,7 +58,7 @@ export const useActivityStore = () => {
       date: '2024.11.15',
       title: '仁豪师兄回校看望老师',
       content:
-        '2024年11月15日，实验室2023届毕业生仁豪师兄返校看望恩师及师弟师妹。当天下午，仁豪与师生聚餐交流，分享工作体验与职场心得，介绍行业发展趋势，解答职业规划、求职技巧等问题，鼓励学弟学妹珍惜时光提升能力，为在校生与毕业生搭建沟通桥梁。',
+        '2024年11月15日，实验室2023届毕业生仁豪师兄返校看望恩师及师弟师妹。当天下午，仁豪与师生聚餐交流，分享工作体验与职场心得，介绍行业发展趋势，解答职业规划、求职技巧等问题，鼓励学弟学妹珍惜时光提升能力，为在校生与毕业生搭建通信桥梁。',
       images: [activityImg3],
     },
     {
