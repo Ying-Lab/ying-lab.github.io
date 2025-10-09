@@ -16,6 +16,13 @@
         <li class="nav-item">
           <router-link to="/about" class="nav-links" @click="closeMobileMenu">About</router-link>
         </li>
+
+        <li class="nav-item">
+          <router-link to="/activities" class="nav-links" @click="closeMobileMenu"
+            >News</router-link
+          >
+        </li>
+
         <li class="nav-item">
           <router-link to="/news" class="nav-links" @click="closeMobileMenu"
             >Research Areas</router-link
@@ -29,11 +36,7 @@
         <li class="nav-item">
           <router-link to="/people" class="nav-links" @click="closeMobileMenu">Members</router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/activities" class="nav-links" @click="closeMobileMenu"
-            >News</router-link
-          >
-        </li>
+        
 
         <li class="nav-item">
           <router-link to="/contact" class="nav-links" @click="closeMobileMenu"
