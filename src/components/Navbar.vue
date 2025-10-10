@@ -24,8 +24,12 @@
           <router-link to="/about" class="nav-links" @click="closeMobileMenu">About</router-link>
         </li>
 
-      
 
+        <li class="nav-item">
+          <router-link to="/news" class="nav-links" @click="closeMobileMenu"
+            >Research Areas</router-link
+          >
+        </li>
         <li class="nav-item">
           <router-link to="/publications" class="nav-links" @click="closeMobileMenu"
             >Publications</router-link
