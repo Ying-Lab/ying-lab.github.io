@@ -18,10 +18,19 @@ import activityImg7_2 from '@/assets/activity/2025迎新博饼2.jpg'
 import activityImg7_3 from '@/assets/activity/2025迎新博饼3.jpg'
 import activityImg8_1 from '@/assets/activity/2025获奖1.jpg'
 import activityImg8_2 from '@/assets/activity/2025获奖3.jpg'
+import activityImg9 from '@/assets/activity/2025 BIBM.jpg'
+
 
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
+    {
+      id: 'activity9',
+      date: '2025.10.8',
+      title: "【论文+3】实验室三篇论文分别被 BIBM 2025 与 Bioinformatics Advances 接收",
+      content: "实验室学术成果喜报频传，三位同学的研究论文成功被国际重要期刊与会议接收。其中，肖子璇同学的《BGC Prediction on Minimizing Generalization Error Upper Bound by Collaborative Belief from Fused Biological Language Representations》、林炳垚同学的《PhyMicroNet: Inferring Directed Species Interactions in Microbiomes from Longitudinal Abundance Data Using Physics-Informed Neural Networks》两篇论文，双双入选 2025 年国际生物医学信息学会议（BIBM）；高奕淳同学的《ICCTax: A Hierarchical Taxonomic Classifier for Metagenomic Sequences on a Large Language Model》则成功被《Bioinformatics Advances》接收。三篇成果聚焦生物信息学领域核心议题，展现了扎实的科研能力与创新视角，也彰显了实验室在该领域的培养成效与学术积累。",
+      images: [activityImg9]
+    },
     {
       id: 'activity8',
       date: '2025.9.25',
