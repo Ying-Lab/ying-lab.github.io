@@ -19,11 +19,27 @@ import activityImg7_3 from '@/assets/activity/2025迎新博饼3.jpg'
 import activityImg8_1 from '@/assets/activity/2025获奖1.jpg'
 import activityImg8_2 from '@/assets/activity/2025获奖3.jpg'
 import activityImg9 from '@/assets/activity/2025 BIBM.jpg'
-
-
+import activity20251021 from '@/assets/activity/2025-ViTrace.jpg'
+import activity2025908 from '@/assets/activity/Genome-Research.jpg'
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
+    {
+      id: "activity2025908",
+      date: "2025.11.8",
+      title: "论文++！ 《PRISM-GRN：单细胞多组学数据中恢复基因调控网络》被 Genome Research 接收！",
+      content: "实验室学术成果再传捷报！近日，团队博士生章文浩等同学研究论文《Recovering gene regulatory networks in single-cell multiomics data with PRISM-GRN》被 Genome Research 接收（PMID: 41067887）。该研究提出贝叶斯模型 PRISM-GRN，整合先验 GRN、scRNA-seq 与 scATAC-seq 数据，按基因调控机制构建可解释架构，在 4 个基准数据集上优于 7 种基线方法，能精准重建细胞类型特异性 GRN，且适配非配对数据，为解析细胞异质性及疾病机制提供有力工具。",
+      images: [activity2025908]
+    },
+    {
+      
+        id: "activity20251021",
+        date: "2025.10.21",
+        title: "实验室论文《ViTrace：基于混合语言模型的肿瘤转录组病毒检测框架》被 Communications Biology 接收 ！",
+        content: "实验室学术成果再添新喜！近日，团队博士生周峰等同学的论文《ViTrace Detects Viral Signatures in Tumor Transcriptomes Using a Hybrid Language Model》被 Communications Biology 接收。该研究提出参考独立的混合语言模型 ViTrace，整合多维度生物特征，突破传统方法局限，对未知及变异病毒识别能力显著提升，在跨物种、跨系统场景中表现优异，为病毒相关癌症机制研究及病毒 - 宿主互作探索提供强大工具。",
+        images: [activity20251021]
+        
+    },
     {
       id: 'activity9',
       date: '2025.10.8',
