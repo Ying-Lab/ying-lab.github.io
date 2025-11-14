@@ -20,7 +20,7 @@ import activityImg8_1 from '@/assets/activity/2025获奖1.jpg'
 import activityImg8_2 from '@/assets/activity/2025获奖3.jpg'
 import activityImg9 from '@/assets/activity/2025 BIBM.jpg'
 import activity20251021 from '@/assets/activity/2025-ViTrace.jpg'
-import activity2025908 from '@/assets/activity/Genome-Research.jpg'
+import activity2025908 from '@/assets/activity/Genome_research.jpg'
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
