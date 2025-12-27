@@ -71,7 +71,7 @@ const filteredPublications = computed(() => {
     )
   }
 
-  return filtered
+  return [...filtered].reverse()
 })
 
 // 获取所有唯一的年份用于筛选
