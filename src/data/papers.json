@@ -456,7 +456,24 @@
       "pages": "vbaf257",
       "year": 2025,
       "doi": "https://doi.org/10.1093/bioadv/vbaf257"
+    },
+    {
+      "id": 49,
+      "authors": "Zixuan Xiao; Tingzhi Deng; Xiaobing Huang; Ying Wang*",
+      "title": "BGC Prediction on Minimizing Generalization Error Upper Bound by Collaborative Belief from Fused Biological Language Representations",
+      "journal": "International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "pages": "1363-1368",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/BIBM66473.2025.11356070"
+    },
+    {
+      "id": 50,
+      "authors": "Bingyao Lin; Tingzhi Deng; Xiaobing Huang; Ying Wang*",
+      "title": "PhyMicroNet: Inferring Directed Species Interactions in Microbiomes from Longitudinal Abundance Data Using Physics-Informed Neural Networks",
+      "journal": "International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "pages": "312-317",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/BIBM66473.2025.11356920"
     }
-    
   ]
 }
