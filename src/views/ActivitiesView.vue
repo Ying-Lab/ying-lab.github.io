@@ -91,8 +91,12 @@ const filteredActivities = computed(() => {
   // 按日期排序（降序）
   return filtered.sort((a, b) => {
     // 将日期格式转换为可以比较的格式
-    const dateA = new Date(a.date.replace(/\./g, '-'))
-    const dateB = new Date(b.date.replace(/\./g, '-'))
+    const parseActivityDate = (value) => {
+      const normalized = value.replace(/\./g, '-')
+      return new Date(/^\d{1,2}-\d{1,2}$/.test(normalized) ? `2099-${normalized}` : normalized)
+    }
+    const dateA = parseActivityDate(a.date)
+    const dateB = parseActivityDate(b.date)
     return dateB - dateA
   })
 })
@@ -239,6 +243,7 @@ const getContentPreview = (content) => {
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
+  background: #f6f8f7;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -246,7 +251,7 @@ const getContentPreview = (content) => {
 .activity-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 

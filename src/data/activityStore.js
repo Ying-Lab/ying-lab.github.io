@@ -1,5 +1,8 @@
 import { ref } from 'vue'
 
+import pcbScanNetOverview from '@/assets/activity/pcb1014602-overview.jpg'
+import pcbSkimOverview from '@/assets/activity/pcb1014638-overview.jpg'
+
 // 导入活动图片资源
 import activityImg1 from '@/assets/activity/1.png'
 import activityImg2_1 from '@/assets/activity/2025欢送 1.jpg'
@@ -21,9 +24,40 @@ import activityImg8_2 from '@/assets/activity/2025获奖3.jpg'
 import activityImg9 from '@/assets/activity/2025 BIBM.jpg'
 import activity20251021 from '@/assets/activity/2025-ViTrace.jpg'
 import activity2025908 from '@/assets/activity/Genome_research.jpg'
+import activity20260824VitaxRag from '@/assets/activity/ViTax_RAG.jpg'
+import syntheticCellGold from '@/assets/activity/合成生物学细胞赛道截图1.jpg'
+import syntheticCellSilver from '@/assets/activity/合成生物学细胞赛道截图2.jpg'
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
+    {
+      id: 'activity20260823-synthetic-cell',
+      date: '2026.8.23',
+      title: '奖来！实验室两支队伍斩获合成生物学创新赛合成细胞赛金奖、银奖',
+      content:
+        '实验室竞赛再传捷报！在 2026 合成生物学创新赛合成细胞赛中，团队博士生拜佩豪担任队长的 BioAI-Youth-Lab 队伍荣获金奖，团队硕士生黄圩杰担任队长的 HuangLab 队伍荣获银奖。两支队伍围绕合成细胞设计与功能构建展开项目实践，在赛题分析、实验方案设计和结果呈现等环节展现了扎实的专业能力与良好的团队协作精神。祝贺两支参赛队伍取得优异成绩！',
+      contentHtml:
+        '实验室竞赛再传捷报！在 2026 合成生物学创新赛合成细胞赛中，团队博士生拜佩豪担任队长的 BioAI-Youth-Lab 队伍荣获金奖，团队硕士生黄圩杰担任队长的 <a href="https://life.xmu.edu.cn/info/1039/5080.htm" target="_blank" rel="noopener noreferrer">HuangLab</a> 队伍荣获银奖。两支队伍围绕合成细胞设计与功能构建展开项目实践，在赛题分析、实验方案设计和结果呈现等环节展现了扎实的专业能力与良好的团队协作精神。祝贺两支参赛队伍取得优异成绩！',
+      images: [syntheticCellGold, syntheticCellSilver],
+      imageCaptions: ['YingLab 队伍：合成细胞赛金奖（队长：拜佩豪）', 'HuangLab 队伍：合成细胞赛银奖（队长：黄圩杰）'],
+    },
+    {
+      id: 'activity20260824-vitax-rag',
+      date: '2026.8.24',
+      title: '[论文+1]《ViTax-RAG》被 Bioinformatics Advances 接收',
+      content:
+        '实验室学术成果再传捷报！近日，团队博士生周峰等同学的论文《ViTax-RAG: A Retrieval-Augmented Language Modeling Tool for Viral Contig Taxonomic Classification》被 Bioinformatics Advances 接收。该研究提出检索增强语言建模工具 ViTax-RAG，将外部知识检索与语言模型相结合，用于病毒 contig 的分类鉴定，为复杂病毒序列的快速注释与病毒组学研究提供了新的计算方法。',
+      images: [activity20260824VitaxRag],
+    },
+    {
+      id: 'activity20260810-pcb',
+      date: '2026.8.10',
+      title: '[论文+2] 实验室两篇论文被 PLOS Computational Biology 接收',
+      content:
+        '近日，团队博士生白佳兴、硕士生龙泳羽的两项研究成果同时被 PLOS Computational Biology 接收，实验室在单细胞计算生物学方向再添两篇论文。白佳兴的研究提出 SKIM，通过模型动态反馈构建高质量细胞草图，在大规模单细胞转录组分析中兼顾计算效率与注释表现；龙泳羽的研究提出 ScanNet，将转录调控网络先验融入异质图学习，用于提升单细胞类型注释的准确性与泛化能力。祝贺两位同学，也感谢团队成员在研究推进过程中的共同努力！',
+      images: [pcbSkimOverview, pcbScanNetOverview],
+      imageCaptions: ['SKIM 方法总览（Fig. 2）', 'ScanNet 方法框架（Fig. 1）'],
+    },
     {
       id: "activity2025908",
       date: "2025.11.8",

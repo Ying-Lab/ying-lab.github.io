@@ -474,6 +474,39 @@
       "pages": "312-317",
       "year": 2025,
       "doi": "https://doi.org/10.1109/BIBM66473.2025.11356920"
+    },
+    {
+      "id": 51,
+      "authors": "Yongyu Long; Wenhao Zhang; Lan Cao; Xiaobing Huang*; Ying Wang*",
+      "title": "ScanNet: Single-cell annotation informed by transcriptional regulation Network via iterative heterogeneous graph learning",
+      "journal": "PLOS Computational Biology",
+      "volume": "22",
+      "issue": "8",
+      "pages": "e1014602",
+      "year": 2026,
+      "doi": "https://doi.org/10.1371/journal.pcbi.1014602"
+    },
+    {
+      "id": 52,
+      "authors": "Jiaxing Bai; Feng Zhou; Chongyang Tan; Yichun Gao; Yushuang He; Xiaobing Huang*; Ying Wang*",
+      "title": "SKIM: A fast sketching strategy integrated with model’s dynamic-feedback for large-scale single-cell transcriptomic analysis",
+      "journal": "PLOS Computational Biology",
+      "volume": "22",
+      "issue": "8",
+      "pages": "e1014638",
+      "year": 2026,
+      "doi": "https://doi.org/10.1371/journal.pcbi.1014638"
+    },
+    {
+      "id": 53,
+      "authors": "Feng Zhou; Lan Cao; Yushuang He; Jiaxing Bai; Ying Wang*",
+      "title": "ViTax-RAG: A Retrieval-Augmented Language Modeling Tool for Viral Contig Taxonomic Classification",
+      "journal": "Bioinformatics Advances",
+      "volume": null,
+      "issue": null,
+      "pages": "vbag247",
+      "year": 2026,
+      "doi": "https://doi.org/10.1093/bioadv/vbag247"
     }
   ]
 }

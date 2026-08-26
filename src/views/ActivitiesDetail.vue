@@ -14,21 +14,17 @@
 
         <!-- 图片展示 -->
         <div v-if="activity.images.length > 0" class="activity-gallery">
-          <img
-            v-for="(img, index) in activity.images"
-            :key="index"
-            :src="img"
-            :alt="`${activity.title} ${index + 1}`"
-            class="activity-image"
-            :class="{ 'single-image': activity.images.length === 1 }"
-            @click="openImageModal(img)"
-          />
+          <figure v-for="(img, index) in activity.images" :key="index" class="activity-figure">
+            <img :src="img" :alt="`${activity.title} ${index + 1}`" class="activity-image" :class="{ 'single-image': activity.images.length === 1 }" @click="openImageModal(img)" />
+            <figcaption v-if="activity.imageCaptions?.[index]">{{ activity.imageCaptions[index] }}</figcaption>
+          </figure>
         </div>
 
         <!-- 内容展示 -->
         <div class="activity-content">
           <p v-for="(paragraph, index) in activityContentParagraphs" :key="index" class="content-paragraph">
-            {{ paragraph }}
+            <span v-if="activity.contentHtml" v-html="paragraph"></span>
+            <template v-else>{{ paragraph }}</template>
           </p>
         </div>
       </div>
@@ -91,7 +87,9 @@ const goBack = () => {
 // 将内容按换行符分割成段落
 const activityContentParagraphs = computed(() => {
   if (!activity.value) return []
-  return activity.value.content.split('\n').filter(paragraph => paragraph.trim() !== '')
+  return (activity.value.contentHtml || activity.value.content)
+    .split('\n')
+    .filter((paragraph) => paragraph.trim() !== '')
 })
 
 // 打开图片弹窗
@@ -180,20 +178,35 @@ const closeImageModal = () => {
 
 /* 图片画廊 */
 .activity-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   margin-bottom: 30px;
 }
 
 .activity-image {
   width: 100%;
-  height: 200px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background: #f7f9f8;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-figure {
+  margin: 0;
+  width: 100%;
+}
+
+.activity-figure figcaption {
+  margin-top: 8px;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .activity-image:hover {
@@ -203,8 +216,7 @@ const closeImageModal = () => {
 
 /* 单张图片样式 */
 .activity-image.single-image {
-  grid-column: 1 / -1;
-  height: 400px;
+  max-height: none;
 }
 
 /* 内容段落 */
@@ -217,6 +229,12 @@ const closeImageModal = () => {
   line-height: 1.8;
   color: #444;
   margin-bottom: 20px;
+}
+
+.content-paragraph :deep(a) {
+  color: #317a76;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* 加载状态 */
@@ -300,16 +318,12 @@ const closeImageModal = () => {
     font-size: 1.6rem;
   }
   
-  .activity-gallery {
-    grid-template-columns: 1fr;
-  }
-  
   .activity-image {
-    height: 180px;
+    height: auto;
   }
   
   .activity-image.single-image {
-    height: 300px;
+    height: auto;
   }
   
   .content-paragraph {
@@ -342,11 +356,11 @@ const closeImageModal = () => {
   }
   
   .activity-image {
-    height: 150px;
+    height: auto;
   }
   
   .activity-image.single-image {
-    height: 200px;
+    height: auto;
   }
   
   .content-paragraph {
