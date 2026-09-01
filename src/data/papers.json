@@ -507,6 +507,17 @@
       "pages": "vbag247",
       "year": 2026,
       "doi": "https://doi.org/10.1093/bioadv/vbag247"
+    },
+    {
+      "id": 54,
+      "authors": "Lan Cao; Wenhao Zhang; Feng Zhou; Yushuang He; Yongyu Long; Shengquan Chen; Ying Wang*",
+      "title": "Robust annotation and discovery of novel cell types in single-cell ATAC-seq data through cross-modal reference alignment",
+      "journal": "Genome Research",
+      "volume": null,
+      "issue": null,
+      "pages": "gr.281981.126",
+      "year": 2026,
+      "doi": "https://doi.org/10.1101/gr.281981.126"
     }
   ]
 }

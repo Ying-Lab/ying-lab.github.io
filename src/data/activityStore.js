@@ -25,11 +25,20 @@ import activityImg9 from '@/assets/activity/2025 BIBM.jpg'
 import activity20251021 from '@/assets/activity/2025-ViTrace.jpg'
 import activity2025908 from '@/assets/activity/Genome_research.jpg'
 import activity20260824VitaxRag from '@/assets/activity/ViTax_RAG.jpg'
+import activity20260828Cara from '@/assets/activity/CARA-web.jpg'
 import syntheticCellGold from '@/assets/activity/合成生物学细胞赛道截图1.jpg'
 import syntheticCellSilver from '@/assets/activity/合成生物学细胞赛道截图2.jpg'
 // 将activity.txt中的数据转换为结构化数据
 export const useActivityStore = () => {
   const activities = ref([
+    {
+      id: 'activity20260828-cara',
+      date: '2026.8.28',
+      title: '[论文+1]《CARA》发表在 Genome Research！',
+      content:
+        '实验室学术成果再传捷报！近日，团队博士生曹澜等同学的论文《Robust annotation and discovery of novel cell types in single-cell ATAC-seq data through cross-modal reference alignment》发表在 Genome Research。该研究提出跨模态贝叶斯框架 CARA，从 scRNA-seq 参考数据向 scATAC-seq 转移细胞类型知识，同时实现细胞类型注释、批次效应校正与新型细胞类型发现。CARA 在多种基准数据上表现稳健，并可推广至单细胞 DNA 甲基化等基因中心组学数据，为复杂单细胞多组学数据的精准解析提供了有力工具。',
+      images: [activity20260828Cara],
+    },
     {
       id: 'activity20260823-synthetic-cell',
       date: '2026.8.23',
