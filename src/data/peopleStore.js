@@ -89,14 +89,14 @@ const members = ref([
   },
   {
     category: '博士生',
-    name: '刘彦鹏',
+    name: '刘延鹏',
     role: '2026级博士生',
     description: '研究方向：生物信息学、多组学数据分析',
     imageUrl: liuyanpengPhoto,
   },
   {
     category: '博士生',
-    name: '刘自强',
+    name: '刘子强',
     role: '2026级博士生',
     description: '研究方向：大语言模型、计算生物学',
     imageUrl: liuziqiangPhoto,
@@ -161,7 +161,7 @@ const members = ref([
   },
   {
     category: '硕士生',
-    name: '肖欣怡',
+    name: '肖昕仪',
     role: '2026级硕士生',
     description: '研究方向：生物大数据分析、模式识别',
     imageUrl: xiaoxinyiPhoto,
