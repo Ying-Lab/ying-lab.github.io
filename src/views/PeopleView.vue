@@ -50,6 +50,59 @@
           </div>
         </div>
       </div>
+
+      <!-- 往届毕业生板块 -->
+      <div class="team-section alumni-section">
+        <div class="section-header" v-scroll-fade-in="200">
+          <h2 class="category-title">往届毕业生</h2>
+          <div class="section-divider"></div>
+          <p class="alumni-subtitle">
+            青蓝相继，薪火相传 ｜ 见证每一位从实验室起航的学子
+          </p>
+        </div>
+
+        <!-- 毕业生展示（按年级分组的时间轴样式） -->
+        <div class="timeline-container">
+          <div
+            v-for="(group, gIdx) in graduatedGrouped"
+            :key="group.grade"
+            class="cohort-timeline-item"
+            v-scroll-fade-in="300 + (gIdx % 6) * 40"
+          >
+            <!-- 时间轴圆点标记 -->
+            <div class="timeline-marker"></div>
+
+            <!-- 年级标题与人数徽章 -->
+            <div class="cohort-header-badge">
+              <span class="cohort-year-title">{{ group.grade }}</span>
+              <span class="cohort-badge-count">{{ group.students.length }} 人</span>
+            </div>
+
+            <!-- 成员卡片网格 -->
+            <div class="alumni-cards-grid">
+              <div
+                v-for="student in group.students"
+                :key="student.id"
+                class="alumni-card"
+              >
+                <div class="alumni-name-row">
+                  <span class="alumni-name">{{ student.name }}</span>
+                  <span
+                    class="alumni-badge"
+                    :class="student.categoryShort === '学硕' ? 'badge-academic' : 'badge-professional'"
+                  >
+                    {{ student.category }}
+                  </span>
+                </div>
+                <div class="alumni-major" :title="student.major">
+                  <i class="fas fa-graduation-cap major-icon"></i>
+                  <span>{{ student.major }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 页脚装饰 -->
@@ -60,8 +113,28 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { usePeopleStore } from '@/data/peopleStore.js'
+import { useGraduatedStore } from '@/data/graduatedStore.js'
 
 const { members } = usePeopleStore()
+const { graduates } = useGraduatedStore()
+
+// 将毕业生按年级分组（已按年级降序排列）
+const graduatedGrouped = computed(() => {
+  const groupsMap = new Map()
+
+  graduates.value.forEach((student) => {
+    if (!groupsMap.has(student.grade)) {
+      groupsMap.set(student.grade, {
+        grade: student.grade,
+        year: student.year,
+        students: [],
+      })
+    }
+    groupsMap.get(student.grade).students.push(student)
+  })
+
+  return Array.from(groupsMap.values())
+})
 
 // 使用 computed 属性对成员按类别进行分组
 const groupedMembers = computed(() => {
@@ -73,16 +146,16 @@ const groupedMembers = computed(() => {
     groups[member.category].push(member)
   })
 
-  // 转换成数组并排序，确保“教师团队”总是在最前面
+  const categoryOrder = ['教师团队', '博士生', '硕士生']
   return Object.keys(groups)
     .map((key) => ({
       category: key,
       members: groups[key],
     }))
     .sort((a, b) => {
-      if (a.category === '教师团队') return -1
-      if (b.category === '教师团队') return 1
-      return a.category.localeCompare(b.category)
+      const indexA = categoryOrder.indexOf(a.category)
+      const indexB = categoryOrder.indexOf(b.category)
+      return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB)
     })
 })
 
@@ -503,6 +576,164 @@ onMounted(() => {
   z-index: -1;
 }
 
+/* 往届毕业生样式 */
+.alumni-section {
+  margin-top: 50px;
+}
+
+.alumni-subtitle {
+  font-size: 1.05rem;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* 时间轴容器 */
+.timeline-container {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 15px;
+  bottom: 25px;
+  width: 2px;
+  background: linear-gradient(to bottom, #4b8f8b 0%, rgba(75, 143, 139, 0.2) 100%);
+}
+
+.cohort-timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+  padding-left: 36px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+.cohort-timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 1px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #4b8f8b;
+  box-shadow: 0 0 0 3px rgba(75, 143, 139, 0.2);
+  z-index: 2;
+}
+
+.cohort-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cohort-year-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: -0.2px;
+}
+
+.cohort-badge-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b8f8b;
+  background: rgba(75, 143, 139, 0.12);
+  padding: 2px 9px;
+  border-radius: 12px;
+}
+
+/* 毕业生卡片网格 */
+.alumni-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.alumni-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alumni-card:hover {
+  transform: translateY(-3px);
+  border-color: #4b8f8b;
+  box-shadow: 0 8px 18px rgba(75, 143, 139, 0.12);
+}
+
+.alumni-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.alumni-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+.alumni-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.badge-academic {
+  background: rgba(75, 143, 139, 0.12);
+  color: #2a6864;
+  border: 1px solid rgba(75, 143, 139, 0.25);
+}
+
+.badge-professional {
+  background: rgba(59, 130, 246, 0.09);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.alumni-major {
+  font-size: 0.84rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.major-icon {
+  font-size: 0.78rem;
+  color: #4b8f8b;
+  flex-shrink: 0;
+}
+
 /* 响应式设计 */
 @media (max-width: 1024px) {
   .members-grid {
@@ -576,6 +807,27 @@ onMounted(() => {
   .member-photo {
     width: 120px;
     height: 168px;
+  }
+
+  /* 毕业生响应式适配 */
+  .timeline-container {
+    padding-left: 0;
+  }
+
+  .timeline-container::before {
+    display: none;
+  }
+
+  .cohort-timeline-item {
+    padding-left: 0;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+
+  .alumni-cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 

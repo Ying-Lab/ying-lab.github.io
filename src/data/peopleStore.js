@@ -1,25 +1,30 @@
 // src/data/peopleStore.js
 import { ref } from 'vue'
 
-// 导入成员照片
+// 导入教师照片
 import wangYingPhoto from '@/assets/team/wangying.jpg'
+
+// 导入博士生照片
+import zhangwenhaoPhoto from '@/assets/team/zhangwenhao.jpg'
 import zhouFengPhoto from '@/assets/team/zhoufeng.jpg'
 import baijiaxingPhoto from '@/assets/team/baijiaxing.png'
-import caolanPhoto from '@/assets/team/caolan.jpg'
 import dengtingzhiPhoto from '@/assets/team/dengtingzhi.jpg'
-import gaoyichunPhoto from '@/assets/team/gaoyichun.jpg'
-import huangweijiePhoto from '@/assets/team/huangweijie.jpg'
-import linbinyaoPhoto from '@/assets/team/linbinyao.jpg'
-import tanchongyangPhoto from '@/assets/team/tanchongyang.png'
-import yuwenwenPhoto from '@/assets/team/yuwenwen.jpg'
-import yuyuanyuanPhoto from '@/assets/team/yuyuanyuan.jpg'
-import zhangwenhaoPhoto from '@/assets/team/zhangwenhao.jpg'
-import zhangyiyangPhoto from '@/assets/team/zhangyiyang.jpg'
+import caolanPhoto from '@/assets/team/caolan.jpg'
 import baipeihaoPhoto from '@/assets/team/baipeihao.jpg'
 import chenfufengPhoto from '@/assets/team/chenfufeng.jpg'
-import longyongyuPhoto from '@/assets/team/longyongyu.jpg'
-import heyushuangPhoto from '@/assets/team/heyushuang.jpg'
-import xiaozixuanPhoto from '@/assets/team/xiaozixuan.jpg'
+import liuyanpengPhoto from '@/assets/team/liuyanpeng2026_phd.jpg'
+import liuziqiangPhoto from '@/assets/team/liuziqiang2026_phd.jpg'
+import zhangjiataoPhoto from '@/assets/team/zhangjiatao2026_phd.jpg'
+
+// 导入硕士生照片
+import yuwenwenPhoto from '@/assets/team/yuwenwen.jpg'
+import zhangyiyangPhoto from '@/assets/team/zhangyiyang.jpg'
+import huangweijiePhoto from '@/assets/team/huangweijie.jpg'
+import yuyuanyuanPhoto from '@/assets/team/yuyuanyuan.jpg'
+import tanchongyangPhoto from '@/assets/team/tanchongyang.png'
+import chenkaiPhoto from '@/assets/team/chenkai2026_master.jpg'
+import linkaiPhoto from '@/assets/team/linkai2026_master.jpg'
+import xiaoxinyiPhoto from '@/assets/team/xiaoxinyi2026_master.jpg'
 
 const members = ref([
   // 教师团队
@@ -32,7 +37,7 @@ const members = ref([
     link: 'https://aerospace.xmu.edu.cn/info/2433/49263.htm',
   },
 
-  // 博士
+  // 博士生
   {
     category: '博士生',
     name: '章文浩',
@@ -82,43 +87,29 @@ const members = ref([
     description: '研究方向：多域学习、深度学习',
     imageUrl: chenfufengPhoto,
   },
+  {
+    category: '博士生',
+    name: '刘彦鹏',
+    role: '2026级博士生',
+    description: '研究方向：生物信息学、多组学数据分析',
+    imageUrl: liuyanpengPhoto,
+  },
+  {
+    category: '博士生',
+    name: '刘自强',
+    role: '2026级博士生',
+    description: '研究方向：大语言模型、计算生物学',
+    imageUrl: liuziqiangPhoto,
+  },
+  {
+    category: '博士生',
+    name: '张家涛',
+    role: '2026级博士生',
+    description: '研究方向：图神经网络、智能算法',
+    imageUrl: zhangjiataoPhoto,
+  },
 
-  // 硕士
-  {
-    category: '硕士生',
-    name: '林炳垚',
-    role: '2023级硕士生',
-    description: '研究方向：数据科学、机器学习',
-    imageUrl: linbinyaoPhoto,
-  },
-  {
-    category: '硕士生',
-    name: '高奕淳',
-    role: '2023级硕士生',
-    description: '研究方向：自然语言处理、健康大数据分析',
-    imageUrl: gaoyichunPhoto,
-  },
-  {
-    category: '硕士生',
-    name: '何羽双',
-    role: '2023级硕士生',
-    description: '研究方向：自然语言处理、健康大数据分析',
-    imageUrl: heyushuangPhoto,
-  },
-  {
-    category: '硕士生',
-    name: '肖子璇',
-    role: '2023级硕士生',
-    description: '研究方向：计算机科学、软件工程',
-    imageUrl: xiaozixuanPhoto,
-  },
-  {
-    category: '硕士生',
-    name: '龙泳羽',
-    role: '2023级硕士生',
-    description: '研究方向：网络安全、数据隐私',
-    imageUrl: longyongyuPhoto,
-  },
+  // 硕士生
   {
     category: '硕士生',
     name: '俞雯雯',
@@ -153,6 +144,27 @@ const members = ref([
     role: '2025级硕士生',
     description: '研究方向：提示词工程、健康大数据分析',
     imageUrl: tanchongyangPhoto,
+  },
+  {
+    category: '硕士生',
+    name: '陈凯',
+    role: '2026级硕士生',
+    description: '研究方向：机器学习、数据挖掘',
+    imageUrl: chenkaiPhoto,
+  },
+  {
+    category: '硕士生',
+    name: '林锴',
+    role: '2026级硕士生',
+    description: '研究方向：自然语言处理、大模型应用',
+    imageUrl: linkaiPhoto,
+  },
+  {
+    category: '硕士生',
+    name: '肖欣怡',
+    role: '2026级硕士生',
+    description: '研究方向：生物大数据分析、模式识别',
+    imageUrl: xiaoxinyiPhoto,
   },
 ])
 
