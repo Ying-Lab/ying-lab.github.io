@@ -154,7 +154,7 @@ const members = ref([
   },
   {
     category: '硕士生',
-    name: '林锴',
+    name: '林恺',
     role: '2026级硕士生',
     description: '研究方向：自然语言处理、大模型应用',
     imageUrl: linkaiPhoto,
