@@ -25,6 +25,7 @@ import tanchongyangPhoto from '@/assets/team/tanchongyang.png'
 import chenkaiPhoto from '@/assets/team/chenkai2026_master.jpg'
 import linkaiPhoto from '@/assets/team/linkai2026_master.jpg'
 import xiaoxinyiPhoto from '@/assets/team/xiaoxinyi2026_master.jpg'
+import tangchenxiPhoto from '@/assets/team/tangchenxi2026_master.jpg'
 
 const members = ref([
   // 教师团队
@@ -165,6 +166,13 @@ const members = ref([
     role: '2026级硕士生',
     description: '研究方向：生物大数据分析、模式识别',
     imageUrl: xiaoxinyiPhoto,
+  },
+  {
+    category: '硕士生',
+    name: '唐晨希',
+    role: '2026级硕士生',
+    description: '研究方向：深度学习、生物信息计算',
+    imageUrl: tangchenxiPhoto,
   },
 ])
 
