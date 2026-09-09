@@ -105,7 +105,7 @@ const members = ref([
   {
     category: '博士生',
     name: '张家涛',
-    role: '2027级博士生',
+    role: '2027级直博生',
     description: '研究方向：图神经网络、智能算法',
     imageUrl: zhangjiataoPhoto,
   },
